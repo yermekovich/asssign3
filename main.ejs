@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <h1>My Blog</h1>
+    <ul>
+        <% blogPosts.forEach(post => { %>
+            <li class="blog-post">
+                <img src="<%= post.imageUrl %>"  class="blog-image">
+                <h2><%= post.title %></h2>
+                <p><%= post.content.slice(0, 100) %></p>
+                <a href="/blog/<%= post.id %>">Read more</a>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/new-blogpost">Add New Blog Post</a>
+</body>
+</html>
